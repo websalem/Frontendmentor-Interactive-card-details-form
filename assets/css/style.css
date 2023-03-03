@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+/*Linear gradient (active input border)*/
+/*Red (input errors)*/
+/*Neutral*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  min-height: 100vh;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.left {
+  flex: 1;
+  min-height: 230px;
+  background-image: linear-gradient(to bottom right, hsl(278, 94%, 30%), hsl(249, 99%, 64%), hsl(278, 94%, 30%), hsl(249, 99%, 64%));
+  position: relative;
+}
+
+.left::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.right {
+  flex: 2;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+form label {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: hsl(278, 94%, 30%);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+form input {
+  padding: 1rem;
+  font-size: 18px;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-field.not-valid input {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+form input::placeholder {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: hsl(279, 6%, 55%);
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  position: relative;
+}
+
+fieldset div:nth-of-type(1),
+fieldset div:nth-of-type(2) {
+  width: 24%;
+  margin-right: 8px;
+}
+
+fieldset div:nth-of-type(2) {
+  margin-right: 1rem;
+}
+
+fieldset div:nth-of-type(3) {
+  width: 48%;
+}
+
+fieldset legend {
+  color: hsl(278, 94%, 30%);
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+}
+
+button {
+  width: 100%;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(270, 3%, 87%);
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.card-face,
+.card-back {
+  width: 285px;
+  height: 155px;
+  border-radius: 7px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-face {
+  background-image: url(../images/bg-card-front.png);
+  top: 120px;
+  z-index: 1;
+  padding: 1rem;
+  color: hsl(270, 3%, 87%);
+}
+
+.card-logo {
+  max-width: 60px;
+  margin-bottom: 2rem;
+}
+
+.card-number {
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.card-holder-exp {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 2px;
+}
+
+.card-back {
+  background-image: url(../images/bg-card-back.png);
+  top: 30px;
+  left: 80px;
+}
+
+.cvc {
+  position: absolute;
+  color: hsl(270, 3%, 87%);
+  top: 70px;
+  font-size: 0.65rem;
+  left: 225px;
+  letter-spacing: 1px;
+}
+
+.form-field {
+  position: relative;
+}
+
+.error {
+  font-size: 0.75rem;
+  position: absolute;
+  bottom: 0;
+  color: hsl(0, 100%, 66%);
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    flex-direction: row;
+  }
+  .left {
+    flex: 1;
+    min-width: 430px;
+    background-image: linear-gradient(to bottom right, hsl(278, 94%, 30%), hsl(249, 99%, 64%), hsl(278, 94%, 30%), hsl(249, 99%, 64%));
+    height: 100vh;
+  }
+  form {
+    max-width: 380px;
+  }
+  .right {
+    flex: 2;
+    padding: 2rem;
+    display: grid;
+    place-content: center;
+  }
+  .card-face,
+  .card-back {
+    width: 450px;
+    height: 245px;
+    border-radius: 7px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .card-face {
+    background-image: url(../images/bg-card-front.png);
+    top: 155px;
+    left: 160px;
+    z-index: 1;
+    padding: 2rem;
+    color: hsl(270, 3%, 87%);
+  }
+  .card-logo {
+    max-width: 85px;
+    margin-bottom: 3rem;
+  }
+  .card-number {
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+  }
+  .card-holder-exp {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 2px;
+  }
+  .card-back {
+    background-image: url(../images/bg-card-back.png);
+    top: 420px;
+    left: 250px;
+  }
+  .cvc {
+    position: absolute;
+    color: hsl(270, 3%, 87%);
+    top: 112px;
+    font-size: 0.85rem;
+    left: 365px;
+    letter-spacing: 1px;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
